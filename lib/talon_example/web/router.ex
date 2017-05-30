@@ -1,5 +1,6 @@
 defmodule TalonExample.Web.Router do
   use TalonExample.Web, :router
+  use Talon.Router
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -11,6 +12,12 @@ defmodule TalonExample.Web.Router do
 
   pipeline :api do
     plug :accepts, ["json"]
+  end
+
+    # your app's routes
+  scope "/talon", TalonExample.Web do
+    pipe_through :browser
+    talon_routes()
   end
 
   scope "/", TalonExample.Web do
