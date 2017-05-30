@@ -5,6 +5,7 @@ defmodule TalonExample.Models.Schema.Blog do
 
       schema "blogs_blogs" do
         field :name, :string
+        has_many :posts, TalonExample.Models.Post
 
         timestamps()
       end

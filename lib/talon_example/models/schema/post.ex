@@ -4,9 +4,10 @@ defmodule TalonExample.Models.Schema.Post do
       use TalonExample.Models.Schema.Base
 
       schema "blogs_posts" do
-        field :body, :string
         field :title, :string
-        field :blog_id, :id
+        field :body, :string
+        # field :blog_id, :id
+        belongs_to :blog, TalonExample.Models.Blog
 
         timestamps()
       end
