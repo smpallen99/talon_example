@@ -17,7 +17,7 @@ defmodule TalonExample.Mixfile do
   # Type `mix help compile.app` for more information.
   def application do
     [mod: {TalonExample.Application, []},
-     extra_applications: [:logger, :runtime_tools]]
+     extra_applications: [:logger, :runtime_tools, :talon]]
   end
 
   # Specifies which paths to compile per environment.
@@ -35,6 +35,7 @@ defmodule TalonExample.Mixfile do
      {:phoenix_html, "~> 2.6"},
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:gettext, "~> 0.11"},
+     {:talon, path: "../talong"},
      {:cowboy, "~> 1.0"}]
   end
 
